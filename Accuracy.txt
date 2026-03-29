@@ -1,0 +1,7 @@
+Cervical Cancer Prediction and Classification Using Deep Learning on Medical Image Data.
+*****************************************************
+Algorithm / Model Used : Xception Architecture.
+
+Training Accuracy:93.00%.
+Validation Accuracy:93.00%.
+*****************************************************

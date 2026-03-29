@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-bs-theme="auto">
+<head>
+
+    <!-- Include JavaScript for color modes -->
+    <script src="../static/assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Update the 'content' attribute to reflect the actual content description -->
+    <meta name="description" content="your_description_goes_here">
+
+    <!-- Modify the 'content' attribute to include appropriate keywords -->
+    <meta name="keywords" content="your_keywords_goes_here">
+
+    <meta name="author" content="tigmatemplate">
+    <meta name="generator" content="Bootstrap">
+
+    <!-- Change the text within the <title> tag to match the webpage's content -->
+    <title>Cervical Cancer Prediction and Classification Using Deep Learning on Medical Image Data</title>
+
+    <!-- 
+        Set the website's favicon and Apple touch icon using the files in the assets/logo folder. You can change these files to your own icons by replacing them with the same names and sizes.
+
+        Be careful if you change the site.webmanifest file, as you need to update the src attribute of the icons array to match the new path of your icon files. Otherwise, your icons may not display correctly on some devices. 
+    -->
+	<link rel="apple-touch-icon" sizes="180x180" href="../static/assets/logo/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../static/assets/logo/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../static/assets/logo/favicon-16x16.png">
+	<link rel="icon" type="image/x-icon" href="../static/assets/logo/favicon.ico">
+	<link rel="manifest" href="../static/assets/logo/site.webmanifest">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../static/assets/libraries/glide/css/glide.core.min.css">
+    <link rel="stylesheet" href="../static/assets/libraries/aos/aos.css">
+    <link rel="stylesheet" href="../static/assets/css/main.min.css">
+    <link rel="stylesheet" href="../static/assets/css/style.css">
+
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <!-- Update the 'title' and 'description' content below to enhance social sharing -->
+    <meta property="og:title" content="your_title_goes_here">
+    <meta property="og:description" content="your_description_goes_here">
+    <!-- Update with actual absolute image URL like: https://example.com/main.jpg -->
+    <meta property="og:image" content="your_absolute_image_url_goes_here">
+    <!-- Update with the absolute URL of the content like: https://example.com/index.html -->
+    <meta property="og:url" content="your_absolute_content_url_goes_here">
+    <!-- Update with the type of object you’re sharing. (e.g., article, website, etc.) -->
+    <meta property="og:type" content="website">
+    <!-- Defines the content language -->
+    <meta property="og:locale" content="en_US">
+
+    
+    <!-- X/Twitter Card Meta Tags for Social Sharing -->
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Update with your X/Twitter handle -->
+    <meta name="twitter:site" content="@yourtwitterhandle"> 
+    <!-- Update the 'title' and 'description' content below to enhance social sharing -->
+    <meta name="twitter:title" content="your_title_goes_here"> 
+    <meta name="twitter:description" content="your_description_goes_here">
+    <!-- Update with actual absolute image URL like: https://example.com/main.jpg -->
+    <meta name="twitter:image" content="your_absolute_image_url_goes_here"> 
+    
+    <!-- 
+        The following line specifies the canonical URL for this page.
+        Replace your_canonical_url_goes_here with the actual canonical URL if needed like: https://example.com/index.html
+        Or just remove it!!!!
+    -->
+    <link rel="canonical" href="your_canonical_url_goes_here">
+
+</head>
+<body>
+
+
+    <!-- loader-wrapper -->
+    <div class="loader-wrapper">
+        <div class="spinner-border text-primary p-5" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+
+
+	<!-- header top -->
+	<header class="navigation position-absolute w-100 bg-body-tertiary shadow border-bottom border-light border-opacity-10 rounded-bottom-3 rounded-bottom-sm-4">
+	    <nav class="navbar navbar-expand-xl" aria-label="Offcanvas navbar large">
+	        <div class="container py-1">
+	             
+ 
+
+	             
+	            <div class="offcanvas offcanvas-end border-0 rounded-start-0 rounded-start-sm-4" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+	                <div class="offcanvas-header" style="padding: 2rem 2rem 1.5rem 2rem;">
+	                    <h5 class="offcanvas-title m-0" id="offcanvasNavbar2Label">
+	                        <a class="navbar-brand" href="javascript:;">
+	                            <img src="../static/assets/logo/logo.png" height="32" alt="logo">
+	                        </a>
+	                    </h5>
+	                    <button type="button" class="btn-close text-body-emphasis" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	                </div>
+
+	                <div class="offcanvas-body">
+	                    <ul class="navbar-nav align-items-xl-center flex-grow-1 column-gap-4 row-gap-4 row-gap-xl-2">
+                            <li class="nav-item ms-xl-auto">
+	                            <a href="{{url_for('first')}}" class="px-3 text-body-emphasis bg-body-secondary-hover nav-link rounded-3 text-base leading-6 fw-semibold" aria-current="page">
+	                                Home
+	                            </a>
+	                        </li>
+
+	                        <li class="nav-item">
+	                            <a href="{{url_for('login')}}" class="px-3 text-body-emphasis bg-body-secondary-hover nav-link rounded-3 text-base leading-6 fw-semibold">
+	                                Login
+	                            </a>
+	                        </li>
+
+	                       
+
+	                        <li class="nav-item ms-xl-auto">
+	                            <a href="{{url_for('first')}}" class="px-3 text-body-emphasis bg-body-secondary-hover border nav-link rounded-3 text-base leading-6 fw-semibold text-center">
+									Cervical Cancer
+	                            </a>
+	                        </li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </nav>
+	</header>
+
+
+
+	<!-- header body -->
+	<div class="overflow-hidden py-9 py-xl-10 position-relative">
+	   	<img src="../static/assets/img/bg/s3.jpg" class="position-absolute z-n1 top-0 h-100 w-100 object-fit-cover" alt="Meeting">
+
+	   	<div class="position-absolute z-n1 top-0 h-100 w-100 bg-dark"
+	        style="opacity: 0.85; mix-blend-mode: multiply; filter: contrast(1.15) brightness(0.85);">
+	    </div>
+
+	    <div class="position-absolute z-0 top-0 h-100 w-100">
+		    <div class="container h-100 d-flex align-items-center">
+                <div class="max-w-2xl mx-auto mx-xl-0 text-center text-xl-start">
+                    <h1 class="m-0 mt-7 text-white tracking-tight text-6xl fw-bold" data-aos-delay="0" data-aos="fade" data-aos-duration="3000">
+                        Login
+                    </h1>
+                    <p class="m-0 mt-4 text-white text-lg leading-8" data-aos-delay="100" data-aos="fade" data-aos-duration="3000">
+						Cervical Cancer Prediction and Classification
+                    </p>
+                </div>
+		    </div>
+	    </div>
+	</div>	
+
+
+
+	<!-- address and call details -->
+	<div class="overflow-hidden py-7 py-sm-8 py-xl-9 bg-body-tertiary">
+	    <div class="container">
+	        <div>
+	            <div class="mx-auto max-w-2xl text-center">
+					<h2 class="m-0 text-primary-emphasis text-base leading-7 fw-semibold">
+						Login
+					</h2>
+	                <p class="m-0 mt-2 text-body-emphasis text-4xl tracking-tight fw-bold">
+	                    Cervical Cancer Prediction and Classification
+	                </p>
+	                
+	            </div>
+	        </div>
+<br>
+<br>
+ 
+			<head>
+
+        
+         
+                <style>
+           
+           
+           body  {
+           background-image: url("../static/images/email3.jpg");
+            
+           }
+            
+            
+               </style>
+                    <script>
+                   addEventListener("load", function () {
+                       setTimeout(hideURLbar, 0);
+                   }, false);
+           
+                   function hideURLbar() {
+                       window.scrollTo(0, 1);
+                   }
+           
+                   function login(){
+                   var uname = document.getElementById("uname").value;
+                   var pwd = document.getElementById("pwd").value;
+           
+               if(uname == "admin" && pwd == "admin")
+               {
+                 alert("Login Success!");
+                 
+                 window.location = "{{url_for('index')}}";
+                 return false;
+               }
+               else
+               {
+               alert("Invalid Credentials!")
+               }
+                   }
+                   
+                     
+           
+           
+            
+               </script>
+               
+           </head>
+           
+            <body id="page-top">
+           
+              
+            
+           
+             <!-- Portfolio Section -->
+             <section class="page-section portfolio" id="portfolio">
+            
+                 <br>
+                 <br>
+                 <!-- Portfolio Section Heading -->
+                  
+                 <!-- Icon Divider -->
+               
+           
+                 <!-- Portfolio Grid Items -->
+                 <div class="row">
+           
+                   <!-- Portfolio Item 1 -->
+                   <div class="col-md-6 col-lg-4" style="margin-left:400px">
+                      <center><h2 class="mb-0 bread"> </h2></center>
+                    <div class="control-group">
+                             <!-- Username -->
+                             
+                             <label class="control-label"   for="username"><b>Username</b></label>
+                             <div class="controls">
+                               <input type="text" id="uname" name="uname" placeholder="" class="form-control">
+                              
+                             </div>
+                           </div>
+                           <div class="control-group">
+                             <!-- Password-->
+                             <br>
+                             <label class="control-label"  for="password"><b>Password</b></label>
+                             <div class="controls">
+                               <input type="password" id="pwd" name="pwd" placeholder="" class="form-control">
+                             
+                             </div>
+                           </div>
+                            <div class="col-md-6 col-lg-4" style="margin-left:-150px">
+                           <div class="control-group">
+                             <!-- Button -->
+                             <br>
+                             <div class="controls">
+                              
+                               <input type="button" class="btn btn-success" value="Login" style="margin-left: 300px" onclick="login()">
+                             
+                             </div>
+                           </div>
+                            </div>
+             </div>
+             </div>
+            
+            
+             </section>
+           
+           
+             
+           
+               </body> 
+           
+</div>
+</div>
+
+     
+
+
+
+	<footer class="overflow-hidden py-6 py-sm-7 py-xl-8 bg-body-tertiary">
+	    <div class="container">
+	        <div class="row gy-5">
+	            <div class="col-12 col-xl-6">
+	                <div class="pb-3 max-w-lg position-relative">
+	                    <form method="post" target="_blank" novalidate class="mc-embedded-subscribe-form">
+
+	                         
+
+	                    </form>
+	                </div>
+	            </div>
+
+	            <div class="col-12 col-xl-6">
+	                <div class="row row-cols-1 row-cols-sm-2 gx-3 gy-5">
+	                    
+
+	                    
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+
+	    
+
+	    <div class="container">
+	    	<hr class="my-6 text-body-emphasis opacity-10">
+
+	        <div class="d-flex flex-column flex-xl-row gap-5 justify-content-between align-items-xl-center">
+	            <div class="order-first order-xl-last">
+	               
+	            </div>
+
+	            <div class="">
+	                
+	            </div>
+
+	            <div class="order-last order-xl-first">
+	               
+	            </div>
+	        </div>
+	    </div>  
+	</footer>
+
+
+
+	<!-- Back to top button -->
+ 
+
+
+
+	<!-- Bootstrap JavaScript: Bundle with Popper -->
+	<script src="../static/assets/libraries/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="../static/assets/libraries/glide/glide.min.js"></script>
+	<script src="../static/assets/libraries/aos/aos.js"></script>
+	<script src="../static/assets/js/scripts.js"></script>
+    <script src="../static/assets/php/contact/script.js"></script>
+
+
+
+</body>
+</html>
